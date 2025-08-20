@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 650px;
+            margin: 20px auto;
+        }
+        .title {
+            width: 650px;
+            background-color: rgb(5, 153, 5);
+            text-align: center;
+            padding: 20px 0px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        .box1 {
+            width: 650px; /* 너비 */
+            height: 600px; /* 높이 */
+            border: 1px solid white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgb(189, 173, 173);
+            line-height: 23px;
+            padding: 15px 15px 10px 15px;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        table{
+            margin-bottom: 10px;
+            text-align: left;
+            border : 1px solid rgba(209, 204, 204, 0.651); /* 2px 크기 검은색 선(solid)으로*/
+            border-collapse: collapse; /* 겹치는 선 하나로 */
+            padding : 5px 10px /* 안쪽 여백(상하 5px, 좌우 10px)*/
+            
+        }
+        td {
+            text-align: left;
+            font-weight: bold;
+            border : 1px solid rgba(231, 223, 223, 0.733);
+            border-collapse: collapse;
+            padding : 5px 40px 5px 40px;
+            background-color: rgba(128, 128, 128, 0.103);
+            font-size: small;
+        }
+        th {
+            text-align: left;
+            font-weight: lighter;
+            border : 1px solid rgba(216, 204, 204, 0.733);
+            border-collapse: collapse;
+            padding : 5px 200px 3px 10px;
+            font-size: 12px;
+        }
+        ul {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="title">
+            자바 수강생 모집
+            <div>
+                자바에 관심 있는 새내기 여러분을 모집합니다.
+            </div>
+        </div>
+        <div class="box1">
+            교내 프로그래밍 동아리에서
+            <span style="color: blue;">
+                신입생
+            </span>
+            을 대상으로 자바 수강생을 모집합니다. 
+            <div style="color: red;">
+                학부나 전공에 상관없습니다.
+            </div>
+            <div style="margin-bottom: 10px;">
+                평소 방송에 관심있었던 여러 학우들의 지원 바랍니다.
+            </div>
+            <table>
+                <tr>
+                    <td>모집 기간</td>
+                    <th>2월 5일 ~ 2월 11일</td>
+                </tr>
+                <tr>
+                    <td>모집 분야</td>
+                    <th>자바 기초, 자바 심화, 백엔드 입문</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">지원 방법</td>
+                    <th rowspan="2">양식 작성 후 이메일 접수  <br> <span style="font-style: italic;">지원서 양식은 교내 동아리 홈페이지 공지 게시판에 있습니다.</span></th>
+                </tr>
+
+            </table>
+            <span>혜택</span>
+            <ul>
+                <li>아주 작은 소정의 활동비 지급</li>
+                <li>주기적인 회식</li>
+            </ul>
+            <img src="../media/java.jpg" width="200" height="250" style="margin-left: 200px;">
+        </div>
+    </div>
+</body>
+</html>
