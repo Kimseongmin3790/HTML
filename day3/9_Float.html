@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 100px;
+            box-sizing: border-box; /* border등을 포함해서 전체 크기를 width, height에 맞게 */
+            color: white;
+        }
+        .box1 {
+            background-color: yellow;
+            float: left;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .box2 {
+            background-color: green;
+            float: left;
+        }
+        .box3 {
+            background-color: red;
+            float: right;
+        }
+        .box4 {
+            background-color: purple;
+            clear: both;
+        }
+        .line1 {
+            height: 30px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+        <div class="box1 box">box1</div>
+        <div class="box2 box">box2</div>
+        <div class="box3 box">box3</div>
+        <div class="line1"></div>
+        <div class="box4 box">box4</div>
+</body>
+</html>

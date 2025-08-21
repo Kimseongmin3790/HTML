@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 650px;
+            margin: 20px auto;
+        }
+        .txt1 {
+            width: 650px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        .box1 {
+            margin: 10px auto;
+            width: 350px; /* 너비 */
+            height: 470px; /* 높이 */
+            border: 1px solid rgb(211, 208, 208);
+            box-shadow: 2px 2px 2px rgb(236, 234, 234);
+            padding: 20px 15px 15px 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .txt2 {
+            font-size: 11px;
+            font-weight: 500;
+            color: rgb(245, 66, 66);
+        }
+        .txt3 {
+            padding: 15px 5px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .box2 {
+            margin: 5px auto;
+            width: 340px;
+            height: 200px;
+            border: 1px solid rgb(167, 161, 161);
+        }
+        .txt4 {
+            padding: 10px 5px;
+            font-size: 14px;
+            color: black;
+            font-weight: normal;
+        }
+        .txt5 {
+            font-size: 14px; 
+            padding: 10px 5px; 
+            color: black; 
+            font-weight: normal;
+        } 
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="txt1">
+            지원 양식
+        </div>
+        <div class="box1 txt2">
+            *빨간색은 필수 입력입니다.
+            <div class="txt3">
+                이 름 :
+                <input type="text">
+            </div>
+            <div class="txt5">
+                학 과 :
+                <input type="text">
+            </div>
+            <div class="txt3">
+                연락처:
+                <select>
+                    <option> 010 </option>
+                </select>
+                -
+                <input type="text" style="width: 45px;">
+                -
+                <input type="text" style="width: 45px;">
+            </div>
+            <div class="txt3">
+                성별 :
+                <input type="radio" name="gender"> <span style="color: black; font-weight: normal;">남자</span>
+                <input type="radio" name="gender"> <span style="color: black; font-weight: normal;">여자</span>
+            </div>
+            <div class="txt4">
+                관심언어 :
+                <input type="checkbox"> 자바
+                <input type="checkbox"> 파이썬
+                <input type="checkbox"> C
+                <input type="checkbox"> C#
+                <input type="checkbox"> 기타언어
+            </div>
+            <textarea rows="10" cols="44" placeholder="자기소개" style="margin: auto;"></textarea>
+            <div style="text-align: center;">
+                <button>가입하기</button>
+                <button>취소</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
