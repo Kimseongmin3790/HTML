@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>숫자 입력 : <input type="text" id="num1"></label>
+    </div>
+    <div>
+        <button onclick="fn1()">판별</button>
+    </div>
+</body>
+</html>
+<script>
+    function fn1() {
+        let num1 = document.querySelector("#num1").value;
+        if(parseInt (num1) % 2 === 1) {
+            alert("홀수");
+        } else {
+            alert("짝수");
+        }
+    }
+</script>

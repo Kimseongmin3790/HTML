@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+            line-height: 100px;
+            box-sizing: border-box;
+            /* border등을 포함해서 전체 크기를 width, height에 맞게 */
+            color: white;
+        }
+        .box1 {
+            background-color: red;
+        }
+
+        .box2 {  /* relative는 위치를 지정할 수 있다 */
+            background-color: blue;    
+            position: relative;
+            left: 30px;
+            top: 30px;    
+        }
+
+        .box3 { /* fixed는 스크롤을 내려도 그 위치에 고정이 되있다 */
+            background-color: green;
+            position: fixed;
+            right: 100px;
+            top: 100px;
+        }
+        .box4 {
+            background-color: purple;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">box1</div>
+    <div class="box2">box2</div>
+    <div class="box3">box3</div>
+    <div style="position: relative; width: 300px; height: 300px;">
+        <div class="box4">box4</div>
+    </div>
+    <div style="margin-bottom: 1000px;"></div>
+</body>
+</html>

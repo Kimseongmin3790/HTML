@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>첫번째 숫자 : <input type="text" id="num1"> </label>
+    </div>
+    <div>
+        <label>두번째 숫자 : <input type="text" id="num2"> </label>
+    </div>
+    <div>
+        <button onclick="fnSum()">더하기!</button>
+        <button onclick="fnCompare()">비교하기!</button>
+    </div>
+</body>
+</html>
+<script>
+    function fnSum() {
+        // let obj1 = document.querySelector("#num1");
+        // console.log(obj1.value);
+        let num1 = document.querySelector("#num1").value;
+        let num2 = document.querySelector("#num2").value;
+        // 문자를 숫자로 바꾸는 함수 -> parseInt, Number
+        alert(parseInt(num1) + Number(num2));
+    }
+
+    function fnCompare() {
+        let num1 = document.querySelector("#num1").value;
+        let num2 = document.querySelector("#num2").value;
+        // 값을 비교할 때 '==', '===' 존재
+        // '==' (두개짜리)는 타입을 무시하고 비교
+        // '===' (세개짜리)는 타입까지 비교
+    }
+</script>
