@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,30 @@
             width: 1500px;
             margin: 20px auto;
         }
+
         #sidebar {
             width: 15%;
             height: 910px;
-            border: 1px solid black;
+            border: 1px solid rgb(207, 203, 203);
+            border-radius: 10px;
             float: left;
             box-sizing: border-box;
             background-color: antiquewhite;
+            position: relative;
+            padding: 10px 30px;
         }
+
         #contents {
             width: 85%;
             height: 910px;
-            border: 1px solid black;
+            border: 1px solid rgb(207, 203, 203);
+            border-radius: 10px;
             float: left;
             box-sizing: border-box;
             background-color: antiquewhite;
+            padding: 10px 20px;
         }
+
         .sidebar-profile {
             width: 150px;
             height: 150px;
@@ -33,30 +42,66 @@
             background-image: url(../media/photo_1.jfif);
             background-size: cover;
             background-repeat: no-repeat;
-            margin: 35px;
+            margin: 5px;
         }
+
         .sidebar-profileName {
             font-size: x-large;
             font-weight: bold;
             text-align: center;
-            margin-bottom: 35px;
+            margin: 20px auto;
         }
+
         .sidebar-contentsText {
             font-size: large;
             text-align: center;
+            margin: 20px auto;
+        }
+
+        .sidebar-mainmenu {
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 10px auto;
+            display: block;
+        }
+
+        .contents-innertext {
+            text-align: centers;
         }
     </style>
 </head>
-<body style="background-color: black;">
+
+<body>
     <div id="container">
         <div id="sidebar">
             <div class="sidebar-profile"></div>
             <div class="sidebar-profileName">hong gildong</div>
-            <div class="sidebar-contentsText">Game list</div>
+            <div class="sidebar-contentsText">list</div>
+            <table>
+                <td>test</td>
+            </table>
         </div>
         <div id="contents">
-            
+            <div class="contents-innertext">
+                <div>
+                    <h2>9월 해야할 일</h2>
+                </div>
+                <ul>
+                    <li>테스트1</li>
+                    <li>테스트2</li>
+                    <li>테스트3</li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
+
 </html>
+<script>
+    setInterval(()=>{
+        let datetime = new Date();
+        
+    },1000);
+</script>
