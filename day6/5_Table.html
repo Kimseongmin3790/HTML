@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table, tr, td, th {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <div id="contents">
+        
+    </div>
+    <div>
+        <button onclick="fnTable()">테이블 생성</button>
+    </div>
+</body>
+</html>
+<script>
+    function fnTable() {
+        let table = document.createElement("table"); // <table></table>
+        let row = document.createElement("tr"); // <tr></tr>
+        for (let i=1; i<=5; i++) {
+            let column = document.createElement("td"); // <td></td>
+            column.innerHTML = i; // 숫자를 계속 증가시키고 싶으면 밖에서 선언후 ++
+            row.appendChild(column);
+        }
+        table.appendChild(row);
+
+        // <table>
+        //  <tr>
+        //   <td>1</td>
+        //   <td>2</td>
+        //   <td>3</td>
+        //   <td>4</td>
+        //   <td>5</td>
+        //  </tr>
+        // </table>
+        let contents = document.querySelector("#contents");
+        contents.appendChild(table);
+    }
+</script>

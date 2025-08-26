@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><label><input onclick="fnBook()" type="radio" name="book" value="java">자바</label></div>
+    <div><label><input onclick="fnBook()" type="radio" name="book" value="oracle">오라클</label></div>
+    <div><label><input onclick="fnBook()" type="radio" name="book" value="html">html/css/javascript</label></div>
+    <div><label><input onclick="fnBook()" type="radio" name="book" value="jQuery">jQuery</label></div>
+    <div class="imgBook"></div>
+    <img src="" width="300px" height="300px" style="display: none;">
+</body>
+</html>
+<script>
+    function fnBook() {
+        let book = document.querySelector("input[name='book']:checked");
+        let imgbook = document.querySelector(".imgBook");
+        if (book.value == "java") {
+            imgbook.innerHTML = "<img src=/media/java2.jpg>";
+        } else if (book.value == "oracle") {
+            imgbook.innerHTML = "<img src=/media/oracle.jpg>";
+        } else if (book.value == "html") {
+            imgbook.innerHTML = "<img src=/media/html.jpg>";
+        } else if (book.value == "jQuery") {
+            imgbook.innerHTML = "<img src=/media/jquery.jpg>";
+        }
+    }
+</script>

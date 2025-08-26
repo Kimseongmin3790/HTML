@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box1"></div>
+    <span>test</span>
+    <div class="box" id="box2"></div>
+    <p>hello</p>
+    <div class="box" id="box3"></div>
+    <button onclick="fnChange()">box 색 변경</button>
+</body>
+
+</html>
+<script>
+    function fnChange() {
+        let objList = document.querySelectorAll(".box");
+        let r = Math.floor(Math.random()*256);
+        let g = Math.floor(Math.random()*256);
+        let b = Math.floor(Math.random()*256);
+        for(let i=0; i<objList.length; i++) {
+            // console.log(objList[i]);
+            objList[i].style.backgroundColor = `rgb(${r},${g},${b})`;
+        }
+    }
+</script>

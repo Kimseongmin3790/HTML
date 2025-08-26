@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        .bluemode {
+            color: blue;
+        }
+        .brownmode {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        숫자 입력: <input type="text" id="listnum">
+    </div>
+    <div>
+        <button onclick="fnAddlist()">리스트 추가</button>
+    </div>
+    <div class="contents">
+
+    </div>
+</body>
+
+</html>
+<script>
+    function fnAddlist() {
+        let newul = document.createElement("ul");
+        let contents = document.querySelector(".contents");
+        let listnum = document.querySelector("#listnum").value;
+        for (let i = 1; i <= listnum; i++) {
+            let newli = document.createElement("li");
+            newli.innerHTML = i + `<span class="material-symbols-outlined">delete</span>`;
+            newul.appendChild(newli);
+        }
+        contents.appendChild(newul);
+    }
+</script>

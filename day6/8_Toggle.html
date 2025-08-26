@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Document</title>
+    <style>
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: #303030;
+            color: white;
+        }
+
+        #lightmode, #darkmode {
+            cursor: pointer;
+        }
+        .light-mode #darkmode {
+            display: none;
+        }
+        .dark-mode #lightmode {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="light-mode">
+    <div>
+        <span id="lightmode" onclick="fnMode()" class="material-symbols-outlined">light_mode</span>
+        <span id="darkmode" onclick="fnMode()"class="material-symbols-outlined">dark_mode</span>
+    </div>
+    <div>
+        <ul>
+            <li>자바</li>
+            <li>오라클</li>
+            <li>html</li>
+        </ul>
+    </div>
+</body>
+
+</html>
+<script>
+    function fnMode() {
+        let body = document.body;
+        body.classList.toggle('light-mode');
+        body.classList.toggle('dark-mode');
+    }
+</script>

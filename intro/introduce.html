@@ -27,7 +27,6 @@
         #date {
             font-size: medium;
             font-style: italic;
-            text-align: center;
             margin: 20px;
         }
         .titlefont {
@@ -35,11 +34,13 @@
             font-weight: bold;
             padding-top: 20px;
             padding-bottom: 20px;
-            background-color: rgb(101, 169, 201);
-            display: block;
+            display: inline-block;
             border-radius: 10px;
         }
         .box1-intext {
+            margin: 20px auto;
+        }
+        .box2-intext {
             margin: 20px auto;
         }
         table,tr,th {
@@ -78,9 +79,7 @@
                 SNS
             </div>
             <div class="box1-intext">
-                <a href="https://www.naver.com">
-                    클릭!
-                </a>
+                <a href="https://www.naver.com"><img src="/media/naver.jfif" width="50px" height="50px"></a>
             </div>
             <div class="titlefont">
                 현재 시간
@@ -91,11 +90,9 @@
             <div class="titlefont">
                 자기소개
             </div>
-            <div>
+            <div class="box2-intext">
                 저는 <span style="background-color: yellow; color: red; font-weight: bold;">프로그래밍</span>에 관심이 많습니다
-            </div>
-            <div>
-                현재 열심히 공부하며 코딩 중!
+                <br> 현재 열심히 공부하며 코딩 중!
             </div>
             <div class="titlefont">
                 Experience
@@ -151,10 +148,10 @@
     setInterval(()=>{
         let dt = new Date();
         let time = document.querySelector("#date");
-        time.innerHTML = dt.getDate() 
+        time.innerHTML = dt.getFullYear() 
         + " - " + dt.getMonth() 
         + " - " + dt.getDay()
-        + " <hr> " + dt.getHours() + " : "
+        + " <br> " + dt.getHours() + " : "
         + dt.getMinutes() + " : "
         + dt.getSeconds();
     }, 1000);
