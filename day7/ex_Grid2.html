@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #f4f4f4;
+        }
+        #header{
+            height: 150px;
+            background-color: darkblue;
+            text-align: center;
+            color: white;
+        }
+        #header h1{
+            padding-top: 30px;
+        }
+        #header2{
+            height: 80px;
+            background-color: rgb(53, 53, 170);
+            text-align: center;
+            color: white;
+            line-height: 60px;
+        }
+        #header2 span{
+            display: inline-block;
+            margin: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #header2 span:hover{
+            background-color: rgb(77, 77, 212);
+        }
+        #contents{
+            width: 800px;
+            height: 650px;
+            margin: 20px auto;
+            border: 1px solid rgb(236, 231, 231);
+            background-color: white;
+        }
+        #left{
+            width: 40%;
+            height: 90%;
+            margin: 20px;
+            margin-left: 50px;
+            float: left;
+            box-sizing: border-box;
+        }
+        #left #main{
+            width: 100%;
+            height: 400px;
+            border-radius: 5px;
+        }
+        #left .small{
+            width: 50%;
+            height: 200px;
+            float: left;
+            margin-top: 10px;
+            border: 1px solid rgb(236, 231, 231);
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+        #right{
+            margin-top: 20px;
+            width: 40%;
+            height: 90%;
+            border: 1px solid rgb(233, 229, 229);
+            box-shadow: 2px 2px 2px rgb(223, 220, 220);
+            float: left;
+            text-align: center;
+            padding: 10px 10px;
+        }
+        #right .textbox{
+            width: 90%;
+            margin: 10px;
+            text-align: left;
+        }
+        #button1{
+            background-color: #27ae60;
+            border-radius: 5px;
+            width: 95%;
+            height: 40px;
+            color: white;
+            margin-top: 30px;
+            border: none;
+            cursor: pointer;
+        }
+        #button1:hover, .button2:hover{
+            background-color: #196b3b;
+        }
+        .button2{
+            background-color: #27ae60;
+            border-radius: 5px;
+            width: 40%;
+            height: 40px;
+            color: white;
+            border: none;
+            margin: 15px auto;
+            cursor: pointer;
+        }
+        #right input{
+            width: 10%;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <h1>상품 상세 페이지</h1>
+        <div>정말 좋은 자바 프로그래밍 책을 만나보세요!</div>
+    </div>
+    <div id="header2">
+        <span>홈</span>
+        <span>카테고리</span>
+        <span>장바구니</span>
+        <span>주문하기</span>
+    </div>
+    <div id="contents">
+        <div id="left">
+            <img src="/media/java2.jpg" id="main">
+            <div>
+                <img src="/media/java3.jpg" class="small">
+                <img src="/media/java4.jpg" class="small">
+            </div>
+        </div>
+        <div id="right">
+            <h3 style="margin-top: 30px;">자바 프로그래밍 책</h3>
+            <div class="textbox">상품명: 자바 프로그래밍 책<hr></div>
+            <div class="textbox" style="font-weight: bold;">판매가: 199,000원<hr></div>
+            <div class="textbox">배송비: 30,000원<hr></div>
+            <div class="textbox">(50,000,000원 이상 구매시 무료)<hr></div>
+            <div class="textbox">적립금: 199원(0.1%)<hr></div>
+            <div class="textbox">발매일: 2023.12.30</div>
+            <button id="button1">장바구니 담기</button>
+            <button class="button2" onclick="fncount()">-</button>
+            <input id="count" type="text" value="1">
+            <button class="button2" onclick="fncount()">+</button>
+            <div><a href="javascript:;">상세 설명 보기</a></div>
+        </div>     
+    </div>
+</body>
+</html>
+<script>
+    function fncount() {
+        let count = document.querySelector("#count").value;
+        if(this.innerHTML == "-"){
+            count -= 1;
+        } else {
+            count += 1;
+        }
+    }
+</script>
