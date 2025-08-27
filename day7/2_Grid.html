@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 700px;
+            display: grid;
+            /* grid-template-columns: 1fr 1fr 1fr; */
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+        }
+
+        .box {
+            border: 1px solid black;
+            padding: 5px 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .box:nth-child(odd) {
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div class="box">헌법개정안은 국회가 의결한 후 30일 이내에 국민투표에 붙여 국회의원선거권자 과반수의 투표와 투표자 과반수의 찬성을 얻어야 한다. 통신·방송의 시설기준과 신문의 기능을
+            보장하기 위하여 필요한 사항은 법률로 정한다. 국회의원의 수는 법률로 정하되, 200인 이상으로 한다. 군인 또는 군무원이 아닌 국민은 대한민국의 영역안에서는 중대한 군사상
+            기밀·초병·초소·유독음식물공급·포로·군용물에 관한 죄중 법률이 정한 경우와 비상계엄이 선포된 경우를 제외하고는 군사법원의 재판을 받지 아니한다.</div>
+        <div class="box">누구든지 체포 또는 구속을 당한 때에는 적부의 심사를 법원에 청구할 권리를 가진다. 군인은 현역을 면한 후가 아니면 국무위원으로 임명될 수 없다. 국가는 법률이 정하는
+            바에 의하여 재외국민을 보호할 의무를 진다.
+
+        </div>
+        <div class="box">지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 법령의 범위안에서 자치에 관한 규정을 제정할 수 있다.
+
+        </div>
+        <div class="box">국가는 주택개발정책등을 통하여 모든 국민이 쾌적한 주거생활을 할 수 있도록 노력하여야 한다.
+
+        </div>
+        <div class="box">국가는 주택개발정책등을 통하여 모든 국민이 쾌적한 주거생활을 할 수 있도록 노력하여야 한다.
+
+        </div>
+        <div class="box">국가는 주택개발정책등을 통하여 모든 국민이 쾌적한 주거생활을 할 수 있도록 노력하여야 한다.
+
+        </div>
+    </div>
+</body>
+
+</html>

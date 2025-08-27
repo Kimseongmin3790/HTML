@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 700px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 100px);
+        }
+        .box{
+            border: 1px solid black;
+            padding: 5px 10px;
+            font-size: 20px;
+            text-align: center;
+        }
+        .box1{
+            background-color: burlywood;
+            grid-column: 1/-1; /* 1번부터 4번까지 ( 1/4 ) */
+            grid-row-start: 1; /* grid-row : 1/2 */
+        }
+        .box2{
+            background-color: cyan;
+            grid-row: 2/4; /* 2/-1 */
+            grid-column-start: 1; /* grid-column : 1/2 */
+        }
+        .box3{
+            background-color: orange;
+            grid-column: 2/4;
+            grid-row: 2/3;
+        }
+        .box4{
+            background-color: brown;
+        }
+        .box5{
+            background-color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <div class="box box5">5</div>
+    </div>
+</body>
+</html>

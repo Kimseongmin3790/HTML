@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 600px;
+            margin: 10px auto;
+            
+        }
+        #prod-pic, #desc{
+            float: left;
+        }
+
+        #prod-pic{
+            margin: 20px 20px;
+        }
+        #desc{
+            width: 300px;
+            margin: 20px;
+        }
+        #small-img{
+            margin-top: 10px;
+        }
+        #small-img img:hover{
+            cursor: pointer;
+        }
+        .small{
+            width: 60px;
+            height: 60px;
+            margin: 3px;
+        }
+        #desc ul{
+            list-style: none;
+        }
+        #desc li{
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        #desc a{
+            text-decoration: none;
+        }
+        .blue-txt{
+            color: blue;
+            font-weight: bold;
+        }
+        #desc button{
+            margin: 20px 0px;
+            width: 100%;
+            padding: 10px;
+        }
+        #info {
+            display: none;
+            clear: both;
+            padding-top: 30px;
+        }
+        #info h2{
+            color: rgb(212, 211, 211);
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>자바프로그래밍 책</h1>
+        <div id="prod-pic">
+            <img id="mainimg" src="/media/java2.jpg" width="200px" height="200px">
+            <div id="small-img">
+                <img src="/media/java1.jpg" class="small">
+                <img src="/media/java3.jpg" class="small">
+                <img src="/media/java4.jpg" class="small">
+            </div>
+        </div>
+        <div id="desc">
+            <ul>
+                <li>상품명 : 자바 책</li>
+                <li class="blue-txt">판매가 : 199,000원</li>
+                <li>배송비 : 30,000원</li>
+                <li>(50,000,000원 이상 구매시 무료)</li>
+                <li>적립금 : 199원(0.1%)</li>
+                <li>발매일 : 2023.12.30</li>
+                <button>장바구니 담기</button>
+                <a href="javascript:;" onclick="fnshow()">상세 설명 보기</a>
+            </ul>
+        </div>
+        <div id="info">
+            <h2>상품 상세 정보</h2>
+            <div>
+                <ul>
+                    <li>출판사 : 좋은출판사</li>
+                    <li>저 자 : 홍길동</li>
+                    <li>언 어 : 한국어/영어</li>
+                    <li>판매처 : <a href="javascript:;">클릭</a></li>
+                </ul>
+            </div>
+            <h3>정보</h2>
+            <p>
+                개발 경력 1년 홍길동 개발자가 저술한 자바 프로그래밍 언어 책
+            </p>
+            <h3>제공</h2>
+            <p>
+                샘플 코드, 강의 영상 제공
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
+<script>
+    function fnshow() {
+        let info = document.querySelector("#info");
+        if(info.style.display == "block") {
+            info.style.display = "none";
+        } else {
+            info.style.display = "block";
+        }
+    }
+    let imglist = document.querySelectorAll(".small");
+    for (let i=0; i<imglist.length; i++) {
+        imglist[i].onclick = function (){
+           let main = document.querySelector("#mainimg");
+           let mainsrc = main.src;
+           main.src = this.src;
+           this.src = mainsrc;
+        };
+    }
+</script>
