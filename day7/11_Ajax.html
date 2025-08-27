@@ -37,7 +37,7 @@
 
             for(let i=0; i<list.length; i++) {
                 let stu = document.createElement("tr");
-                stu.innerHTML = `<td>${list[i].STU_NO}</td><td>${list[i].STU_NAME}</td><td>${list[i].STU_DEPT}</td><td>${list[i].STU_GRADE}</td><td>${list[i].STU_HEIGHT}</td>`;
+                stu.innerHTML = `<td>${list[i].STU_NO}</td><td>${list[i].STU_NAME}</td><td>${list[i].STU_DEPT}</td><td>${list[i].STU_GRADE}</td><td>${list[i].STU_HEIGHT || ""}</td>`;
                 table.appendChild(stu);
             }
 

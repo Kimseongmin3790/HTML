@@ -139,14 +139,14 @@
             <h2>hong gil dong</h2>
             <p>끈기와 열정을 가진 개발자 지망생</p>
             <div class="menu">
-                <a href="#intro">소개</a>
-                <a href="#strength">나의 강점</a>
-                <a href="#interest">관심 분야</a>
-                <a href="#hobby">취미</a>
-                <a href="#goals">목표</a>
-                <a href="#language">관심 언어</a>
-                <a href="#study">공부 진도</a>
-                <a href="#contact">연락처</a>
+                <a class="menu" href="#intro">소개</a>
+                <a class="menu" href="#strength">나의 강점</a>
+                <a class="menu" href="#interest">관심 분야</a>
+                <a class="menu" href="#hobby">취미</a>
+                <a class="menu" href="#goals">목표</a>
+                <a class="menu" href="#language">관심 언어</a>
+                <a class="menu" href="#study">공부 진도</a>
+                <a class="menu" href="#contact">연락처</a>
             </div>
             <h3>현재 시간</h3>
             <div id="datetime"></div>
@@ -237,9 +237,6 @@
     }, 1000);
 
     let menulist = document.querySelectorAll(".menu");
-    for(let i=0; i<menulist.length; i++) {
-        menulist[i].onclick = function() {
-            console.log(this.href);
-        };
-    }
+    console.log(menulist);
+    
 </script>
