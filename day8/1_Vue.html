@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        {{name}}
+        <button @click="fnTest">변경</button>
+        <hr>
+        <div>
+            <div>{{num}}</div>
+            <input v-model="changeNum">
+            <button @click="fnNumber">변경</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수 - (key : value)
+                num : 10,
+                name : "홍길동",
+                age : 30,
+                changeNum : ""
+            };
+        },
+        methods: {
+            // 함수(메소드) - (key : function())
+            fnUserList: function () {
+                $.ajax({
+                    url: "",
+                    dataType: "json",
+                    type: "GET",
+                    data: {},
+                    success: function (data) {
+
+                    }
+                });
+            },
+            fnTest : function() {
+                // 변수에 접근할때는 this를 써야 한다.
+                this.name = "김철수";
+            },
+            fnNumber : function() {
+                this.num = this.changeNum;
+            }
+        },
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
+
+    app.mount('#app');
+</script>
