@@ -14,7 +14,10 @@
     <div id="app">
         <h2>학생추가</h2>
         <div>
-            학번 : <input v-model="stuNo">
+            학번 : 
+            <template v-if="check"><input v-model="stuNo" disabled></template>
+            <template v-else><input v-model="stuNo"></template>
+
             <button @click="fnCheck">중복체크</button>
         </div>
         <div>이름 : <input v-model="name"></div>
@@ -67,6 +70,10 @@
             },
             fnCheck: function() {
                 let self = this;
+                if(self.stuNo.length != 8) {
+                    alert("학번은 8글자 입니다");
+                    return;
+                }
                 $.ajax({
                     url: "http://localhost:3009/search",
                     dataType: "json",
