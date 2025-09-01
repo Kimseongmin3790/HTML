@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개 페이지</title>
+    <style>
+        #container {
+            width: 1000px;
+            height: auto;
+            margin: 10px auto;
+        }
+
+        body {
+            margin: 0;
+            background: #f8f9fa;
+            color: #333;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 260px;
+            height: 900px;
+            background: #4A90E2;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            margin: 15px auto;
+
+        }
+
+        .sidebar h2 {
+            margin: 0px auto;
+        }
+
+        .sidebar h3 {
+            text-align: center;
+            font-size: x-large;
+        }
+
+        .sidebar p {
+            font-size: 0.9rem;
+            margin: 20px auto;
+        }
+
+        #datetime {
+            font-size: x-large;
+            text-align: center;
+        }
+
+        .menu a {
+            width: 100%;
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+
+        .main {
+            margin-left: 360px;
+            padding: 30px;
+            flex: 1;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 25px;
+            display: none;
+        }
+
+        h3 {
+            border-left: 5px solid #4A90E2;
+            padding-left: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        ul li::before {
+            position: absolute;
+            left: -15px;
+            color: #4A90E2;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 20px;
+            margin: 10px 0;
+        }
+
+        .progress {
+            background: #4A90E2;
+            height: 100%;
+            text-align: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="/media/photo3.jpg" alt="프로필 사진">
+            <h2>hong gil dong</h2>
+            <p>끈기와 열정을 가진 개발자 지망생</p>
+            <div class="menu">
+                <a class="menu" href="#intro">소개</a>
+                <a class="menu" href="#strength">나의 강점</a>
+                <a class="menu" href="#interest">관심 분야</a>
+                <a class="menu" href="#hobby">취미</a>
+                <a class="menu" href="#goals">목표</a>
+                <a class="menu" href="#language">관심 언어</a>
+                <a class="menu" href="#study">공부 진도</a>
+                <a class="menu" href="#contact">연락처</a>
+            </div>
+            <h3>현재 시간</h3>
+            <div id="datetime"></div>
+        </div>
+
+        <div class="main">
+            <div class="card" id="first">
+                <h3>안녕하세요</h3>
+                <p>
+                    자기 소개 페이지입니다. 
+                    알고 싶은 정보를 왼쪽 메뉴에서 클릭해주세요!
+                </p>
+            </div>
+
+            <div class="card" id="intro">
+                <h3>소개</h3>
+                <p>
+                    안녕하세요! 저는 새로운 기술을 배우는 것을 좋아하고, 꾸준히 성장하는 것을 목표로 하고 있습니다.
+                    웹 개발을 중심으로 다양한 프로젝트에 도전하고 있습니다.
+                </p>
+            </div>
+
+            <div class="card" id="strength">
+                <h3> 나의 강점</h3>
+                <ul>
+                    <li>꾸준히 학습하는 습관</li>
+                    <li>팀워크와 소통 능력</li>
+                    <li>문제 해결 중심 사고</li>
+                </ul>
+            </div>
+
+            <div class="card" id="interest">
+                <h3>관심 분야</h3>
+                <p>웹 개발, 데이터 베이스 관리, 게임 개발</p>
+            </div>
+
+            <div class="card" id="hobby">
+                <h3>취미</h3>
+                <p>게임, 독서, 여행</p>
+            </div>
+
+            <div class="card" id="goals">
+                <h3>목표</h3>
+                <p>
+                    단기적으로는 웹 개발자로 취업하여 실무 경험을 쌓는 것이 목표입니다.
+                    장기적으로는 데이터 기반 서비스와 풀스택 개발에 참여하고 싶습니다.
+                </p>
+            </div>
+
+            <div class="card" id="language">
+                <h3>관심 언어</h3>
+                <ul>
+                    <li>java</li>
+                    <li>oracle</li>
+                    <li>HTML/CSS/javascript</li>
+                </ul>
+            </div>
+
+            <div class="card" id="study">
+                <h3>공부 진도</h3>
+                <p>HTML/CSS/javascript</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 60%;">60%</div>
+                </div>
+                <p>oracle</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;">70%</div>
+                </div>
+                <p>java</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: 70%;">70%</div>
+                </div>
+            </div>
+
+            <div class="card" id="contact">
+                <h3>연락처</h3>
+                <p>이메일: example@email.com</p>
+                <p><a href="https://github.com/username">GitHub</a></p>
+                <p><a href="https://www.naver.com">naver</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    setInterval(()=>{
+        let dt = new Date();
+        let time = document.querySelector("#datetime");
+        time.innerHTML = dt.getFullYear() 
+        + "년  " + dt.getMonth()
+        + "월  " + dt.getDay()
+        + "일 <br> " + dt.getHours() + "시  "
+        + dt.getMinutes() + "분  "
+        + dt.getSeconds() + "초";
+    }, 1000);
+
+    // 메뉴 클릭 시 해당 card만 보이기
+    const menuLinks = document.querySelectorAll(".menu a");
+    const cards = document.querySelectorAll(".card");
+
+    // 처음엔 소개만 보이게 설정
+    document.querySelector("#first").style.display = "block";
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault(); // 기본 링크 이동 막기
+
+            // 모든 카드 숨기기
+            cards.forEach(card => card.style.display = "none");
+
+            // 클릭한 메뉴의 href(id) 가져오기
+            const targetId = link.getAttribute("href");
+            const targetCard = document.querySelector(targetId);
+
+            // 해당 카드 보이기
+            if (targetCard) {
+                targetCard.style.display = "block";
+            }
+        });
+    });
+</script>

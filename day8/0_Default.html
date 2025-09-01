@@ -28,6 +28,7 @@
         methods: {
             // 함수(메소드) - (key : function())
             fnUserList: function () {
+                let self = this;
                 $.ajax({
                     url: "",
                     dataType: "json",
@@ -38,7 +39,7 @@
                     }
                 });
             }
-            
+
         }, // methods
         mounted() {
             // 처음 시작할 때 실행되는 부분

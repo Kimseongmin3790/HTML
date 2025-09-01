@@ -14,6 +14,7 @@
         // 첫번째 파라미터 : 팝업을 띄울 주소(파일)
         // 두번째 파라미터 : 팝업의 이름 => 같은 이름의 팝업은 2개이상 출력되지 않는다.
         // 세번째 파라미터 : 크기(width, height) 및 위치(left, top)
+        console.log(screen.availHeight);
         let left = (screen.availWidth-300)/2;
         let top = (screen.availHeight-300)/2;
         window.open("../day5/20_Script.html", "popup1", `width=300, height=300, left=${left}, top=${top}`);

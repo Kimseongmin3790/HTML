@@ -61,10 +61,10 @@
                 </tr>
             </table>
             <div>
-                <button @click="fnEdit()">수정</button> 
-                <!-- 삭제 후 리스트 페이지로-->
-                <!-- 삭제 주소는 /board/delete -->
-                <button @click="fnRemove">삭제</button> 
+                <template v-if="sessionId == info.USERID || sessionStatus == 'A'">
+                    <button @click="fnEdit()">수정</button>
+                    <button @click="fnRemove">삭제</button>
+                </template>
                 <button @click="fnList">목록으로</button> <!-- 리스트 페이지로 -->
             </div>
         </div> 
@@ -79,7 +79,9 @@
             return {
                 // 변수 - (key : value)
                 boardNo : "",
-                info : {}
+                info : {},
+                sessionId : "",
+                sessionStatus : ""
             };
         },
         methods: {
@@ -123,8 +125,10 @@
         mounted() {
             // 처음 시작할 때 실행되는 부분
             const queryParams = new URLSearchParams(window.location.search);
-            this.boardNo = queryParams.get('boardNo') || '';     
-            this.fnBoardInfo();       
+            this.boardNo = queryParams.get('boardNo') || '';  
+            this.sessionId = sessionStorage.getItem("sessionId");
+            this.sessionStatus = sessionStorage.getItem("sessionStatus");
+            this.fnBoardInfo(); 
         }
     });
 
