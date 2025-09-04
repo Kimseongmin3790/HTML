@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개 페이지</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        body {
+            margin: 0;
+            background: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            display: flex;
+            flex: 1;
+        }
+
+        .sidebar {
+            width: 230px;
+            height: 1040px;
+            background: #4A90E2;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            margin: 15px auto;
+        }
+
+        .sidebar h2 {
+            margin: 0px auto;
+        }
+
+        .sidebar h3 {
+            font-size: x-large;
+        }
+
+        .sidebar p {
+            font-size: 16px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        #datetime {
+            font-size: large;
+            margin: 10px 0px;
+            padding-left: 15px;
+        }
+
+        #weather {
+            border: 1px solid black;
+            height: 150px;
+        }
+
+        .menu a {
+            width: 100%;
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        .menu a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            font-weight: bold;
+        }
+
+        .main {
+            flex: 1;
+            display: flex;
+        }
+
+        .content {
+            flex: 3;
+            padding: 30px;
+        }
+
+        .header {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            color: #4A90E2;
+        }
+
+        .header p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 25px;
+            display: none;
+            height: 83%;
+        }
+
+        h3 {
+            border-left: 5px solid #4A90E2;
+            padding-left: 10px;
+        }
+
+        ul {
+            list-style: disc;
+            padding-left: 10px;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        .progress-bar {
+            background: #ddd;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 20px;
+            margin: 10px 0;
+        }
+
+        .progress {
+            background: #4A90E2;
+            height: 100%;
+            text-align: center;
+            color: white;
+            font-size: 0.8rem;
+        }
+
+        .widget {
+            flex: 1;
+            padding: 30px 20px 30px 0;
+        }
+
+        .widget-box {
+            background: rgb(235, 235, 235);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            height: 28%;
+        }
+
+        .widget-box a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .widget-box a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #0a1d33;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 720px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px;
+            }
+
+            .sidebar img {
+                width: 100px;
+                height: 100px;
+                margin: 0;
+            }
+
+            .sidebar h2,
+            .sidebar p,
+            .sidebar h3,
+            #datetime {
+                display: none;
+            }
+
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .menu a {
+                flex: 1 1 40%;
+                margin: 5px;
+                text-align: center;
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .main {
+                flex-direction: column;
+            }
+
+            .widget {
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .sidebar {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .sidebar img {
+                width: 80px;
+                height: 70px;
+                border-radius: 10%;
+            }
+
+            .menu {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu a {
+                font-size: 0.85rem;
+                padding: 6px 10px;
+            }
+
+            .header h1 {
+                font-size: 1.4rem;
+            }
+
+            .card {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .widget-box {
+                padding: 15px;
+                font-size: 0.85rem;
+            }
+
+            footer p {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <!-- 사이드바 -->
+            <div class="sidebar">
+                <img src="/media/photo3.jpg" alt="프로필 사진">
+                <h2>hong gil dong</h2>
+                <p>끈기와 열정을 가진 개발자 지망생</p>
+                <div class="menu">
+                    <a class="menu" href="#intro">소개</a>
+                    <a class="menu" href="#strength">나의 강점</a>
+                    <a class="menu" href="#interest">관심 분야</a>
+                    <a class="menu" href="#hobby">취미</a>
+                    <a class="menu" href="#goals">목표</a>
+                    <a class="menu" href="#language">관심 언어</a>
+                    <a class="menu" href="#study">공부 진도</a>
+                    <a class="menu" href="#contact">연락처</a>
+                </div>
+                <h3>현재 시간</h3>
+                <div id="datetime"></div>
+                <h3>현재 날씨</h3>
+                <div id="weather"></div>
+            </div>
+            <!-- 메인 영역 -->
+            <div class="main">
+                <!-- 컨텐츠 -->
+                <div class="content">
+                    <div class="header">
+                        <h1>hong gil Dong</h1>
+                        <p>끈기와 열정으로 성장하는 개발자</p>
+                    </div>
+                    <div class="card" id="first">
+                        <h3>안녕하세요</h3>
+                        <p>
+                            자기 소개 페이지입니다.
+                            알고 싶은 정보를 왼쪽 메뉴에서 클릭해주세요!
+                        </p>
+                        <h3>수강중인 과정</h3>
+                        <div>
+                            <p>
+                                flutter 기반 풀스택 개발자 과정
+                            </p>
+                        </div>
+                        <div>
+                            <p>
+                                07-16 ~ 01-16
+                            </p>
+                        </div>
+                        <h3>페이지에 추가할 것</h3>
+                        <ul>
+                            <li>애니메이팅 효과 추가하기</li>
+                            <li>오른쪽 위젯에 좀 더 동적인 요소 넣기</li>
+                            <li>모바일(420px), 태블릿(720px)에 맞춰서 화면 바꾸기</li>
+                            <li>날씨 api 가지고 와서 날씨 칸에 넣기</li>
+                        </ul>
+                    </div>
+                    <div class="card" id="intro">
+                        <h3>소개</h3>
+                        <p>
+                            안녕하세요!
+                        </p>
+                        <p>
+                            저는 새로운 기술을 배우는 것을 좋아하고,
+                        </p>
+                        <p>
+                            꾸준히 성장하는 것을 목표로 하고 있습니다.
+                        </p>
+                        <p>
+                            웹 개발을 중심으로 다양한 프로젝트에 도전하고 있습니다.
+                        </p>
+                    </div>
+                    <div class="card" id="strength">
+                        <h3> 나의 강점</h3>
+                        <ul>
+                            <li>꾸준히 학습하는 습관</li>
+                            <li>팀워크와 소통 능력</li>
+                            <li>문제 해결 중심 사고</li>
+                        </ul>
+                    </div>
+                    <div class="card" id="interest">
+                        <h3>관심 분야</h3>
+                        <ul>
+                            <li>웹 개발</li>
+                            <li>데이터 베이스 관리</li>
+                            <li>게임 개발</li>
+                        </ul>
+                    </div>
+                    <div class="card" id="hobby">
+                        <h3>취미</h3>
+                        <ul>
+                            <li>게임</li>
+                            <li>영화 감상</li>
+                            <li>독서</li>
+                            <li>배드민턴</li>
+                        </ul>
+                    </div>
+                    <div class="card" id="goals">
+                        <h3>목표</h3>
+                        <p>
+                            단기적으로는 웹 개발자로 취업하여 실무 경험을 쌓는 것이 목표입니다.
+                            장기적으로는 데이터 기반 서비스와 풀스택 개발에 참여하고 싶습니다.
+                        </p>
+                    </div>
+                    <div class="card" id="language">
+                        <h3>관심 언어</h3>
+                        <ul>
+                            <li>java</li>
+                            <li>oracle</li>
+                            <li>HTML/CSS/javascript</li>
+                        </ul>
+                    </div>
+                    <div class="card" id="study">
+                        <h3>공부 진도</h3>
+                        <p>HTML/CSS/javascript</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 60%;">60%</div>
+                        </div>
+                        <p>oracle</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%;">70%</div>
+                        </div>
+                        <p>java</p>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%;">70%</div>
+                        </div>
+                    </div>
+                    <div class="card" id="contact">
+                        <h3>연락처</h3>
+                        <p>이메일: example@email.com</p>
+                        <p>전화번호: 010-1234-5678</p>
+                        <p><a href="https://github.com">GitHub</a></p>
+                        <p><a href="https://www.naver.com">naver</a></p>
+                    </div>
+                </div>
+                <!-- 오른쪽 위젯 -->
+                <div class="widget">
+                    <div class="widget-box">
+                        <h3>오늘의 할 일</h3>
+                        <ul>
+                            <li>HTML 복습하기</li>
+                            <li>코딩테스트 문제 풀기</li>
+                            <li>GitHub 업데이트</li>
+                        </ul>
+                    </div>
+                    <div class="widget-box">
+                        <h3>💡 오늘의 명언</h3>
+                        <p id="quote"></p>
+                    </div>
+                    <div class="widget-box">
+                        <h3>추천 책</h3>
+                        <ul>
+                            <li><a href="#" @click.prevent="fnPopup('jquery')">처음 배우는 jQuery</a></li>
+                            <li><a href="#" @click.prevent="fnPopup('oracle')">이것이 오라클이다</a></li>
+                            <li><a href="#" @click.prevent="fnPopup('java')">자바의 정석</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 푸터 -->
+        <footer>
+            <p>© 2025 Hong Gil Dong. All rights reserved.</p>
+            <p>
+                <a href="https://github.com">GitHub</a> |
+                <a href="https://linkedin.com">LinkedIn</a> |
+                <a href="https://instagram.com">Instagram</a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>
+<script>
+    // 현재 시간 표시
+    setInterval(() => {
+        let dt = new Date();
+        let time = document.querySelector("#datetime");
+        time.innerHTML = dt.getFullYear()
+            + "년 " + (dt.getMonth() + 1)
+            + "월 " + dt.getDate()
+            + "일 <br> " + dt.getHours() + "시 "
+            + dt.getMinutes() + "분 "
+            + dt.getSeconds() + "초";
+    }, 1000);
+
+    // 메뉴 클릭 시 해당 card만 보이기
+    const menuLinks = document.querySelectorAll(".menu a");
+    const cards = document.querySelectorAll(".card");
+
+    // 처음엔 첫 화면 보이기
+    document.querySelector("#first").style.display = "block";
+
+    menuLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // 모든 카드 숨기기
+            cards.forEach(card => card.style.display = "none");
+
+            // 클릭한 메뉴의 href(id) 가져오기
+            const targetId = link.getAttribute("href");
+            const targetCard = document.querySelector(targetId);
+
+            if (targetCard) {
+                targetCard.style.display = "block";
+            }
+        });
+    });
+
+    function fnPopup() {
+        window.open("introduceBook.html", "popup1", `width=400, height=400, left=1500, top=500`);
+    }
+
+    const quotes = [
+        "배움은 결코 누적되는 것이 아니다, 시작도 없고 끝도 없이 알아나가는 과정이다.",
+        "아는 것만으로는 충분하지 않다, 배운 것을 적용해야 한다.",
+        "배움에는 끝이 없다.",
+        "꾸준함이 곧 실력이다.",
+        "의지만으로는 충분하지 않다, 실천에 옮겨야 한다.",
+        "걱정하지 마라. 당신은 당신이 생각하는 대로 변할 수 있다.",
+        "실수는 그리 대단한 것이 아니다. 그것을 인정할 수 있는 용기만 있다면",
+        "비관적인 시선은 스스로에게 해로울 뿐 이로울 것이라곤 아무것도 없다."
+
+    ];
+    document.getElementById("quote").innerText =
+        quotes[Math.floor(Math.random() * quotes.length)];
+
+    const app = Vue.createApp({
+        data() {
+            return {
+                // 변수 - (key : value)
+                bookName: ""
+            };
+        },
+        methods: {
+            // 함수(메소드) - (key : function())
+            fnPopup: function (book) {
+                let self = this;
+                self.bookName = book;
+                window.open(`introduceBook.html?bookname=${book}`, "popup1", `width=400, height=400, left=1500, top=500`);
+            }
+
+        }, // methods
+        mounted() {
+            // 처음 시작할 때 실행되는 부분
+        }
+    });
+
+    app.mount('#app');
+</script>
